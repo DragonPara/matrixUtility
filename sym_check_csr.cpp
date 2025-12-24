@@ -26,7 +26,7 @@ int main(void)
     vals = new double[nnz];
     fp = fopen("./matrix/MatrixA.00000", "r");
     fscanf(fp, "%d%d%d%d\n", &b1, &b2, &b3, &b4);
-    rowptr[0] = 0;
+    memset(rowptr, 0, sizeof(int) * (n + 1));
     // 正式读取
     for (int i = 0; i < nnz; i++)
     {
